@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
+import requests
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -17,8 +18,12 @@ def input_page():
 # WebSocket event for receiving messages
 @socketio.on('message')
 def handle_message(data):
+
+    number_trivia = requests.get(f"http://numbersapi.com/{int(data)}/trivia")
+    number_trivia = number_trivia.text
+
     # Broadcast the message to all connected clients
-    emit('display', data, broadcast=True)
+    emit('display', number_trivia, broadcast=True)
 
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', port=5000)
