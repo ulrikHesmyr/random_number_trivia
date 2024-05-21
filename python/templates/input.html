@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Input</h1>
+    <form id="inputForm">
+        <input type="text" id="inputField" placeholder="Type something...">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        var socket = io();
+        document.getElementById('inputForm').onsubmit = function(e) {
+            e.preventDefault();
+            var input = document.getElementById('inputField').value;
+            socket.send(input);
+            document.getElementById('inputField').value = '';
+        };
+    </script>
+</body>
+</html>
