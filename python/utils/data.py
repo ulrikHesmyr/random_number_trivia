@@ -518,16 +518,10 @@ random_number_trivias = {
         "68 is the number of countries in the European Broadcasting Union."
     ],
     69: [
-        "69 is the atomic number of thulium.",
-        "69 is the number of the French department Rhône.",
-        "69 is the number of positions in the Kama Sutra.",
-        "69 is the total number of games in a Major League Baseball season for one team before expansion.",
-        "69 is the number of counties in the state of Pennsylvania.",
-        "69 is the number of the Messier object (a globular cluster in Sagittarius).",
-        "69 is the number of days the Chilean miners were trapped underground in 2010.",
-        "69 is the number of pounds in a bushel of barley.",
-        "69 is the number of the USS Long Beach (CGN-9), the first nuclear-powered guided missile cruiser.",
-        "69 is the number of petals in the flower of life."
+        "69 🍆",
+        "69 hihi",
+        "69. Nice.",
+        "69 🤭",
     ],
     70: [
         "70 is the atomic number of ytterbium.",
