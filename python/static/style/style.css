@@ -1,0 +1,11 @@
+* {
+    font-family: monospace;
+}
+
+body {
+    color:white;
+    background: chocolate;
+    font-size:xx-large;
+    display: flex;
+    flex-direction: column-reverse;
+}
