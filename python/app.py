@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, Response
 from flask_socketio import SocketIO, emit
 import requests
+from utils.data import random_number_trivias
+import random
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -19,8 +21,15 @@ def input_page():
 @socketio.on('message')
 def handle_message(data):
 
-    number_trivia = requests.get(f"http://numbersapi.com/{int(data)}/trivia")
-    number_trivia = number_trivia.text
+    #Validating if we have data for this number
+    number = int(data)
+    if number > len(random_number_trivias) and number > 0:
+        emit('display', 'Number out of range', broadcast=True)
+        return
+    
+    # Get the random number trivia based on the input, accessing a dictionary, not a list
+    number_data = random_number_trivias[number]
+    number_trivia = number_data[random.randint(0, len(number_data)-1)]
 
     # Broadcast the message to all connected clients
     emit('display', number_trivia, broadcast=True)
