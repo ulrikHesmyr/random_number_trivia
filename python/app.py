@@ -23,7 +23,7 @@ def handle_message(data):
 
     #Validating if we have data for this number
     number = int(data)
-    if number > len(random_number_trivias) and number > 0:
+    if number > len(random_number_trivias) and number < 0:
         emit('display', 'Number out of range', broadcast=True)
         return
     
